@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
 
 const books = require('./book.mock');
+const countries = require('./countries.mock');
 const typeDefs = require('./schema');
 
 // Resolvers define the technique for fetching the types defined in the
@@ -8,6 +9,7 @@ const typeDefs = require('./schema');
 const resolvers = {
   Query: {
     books: () => books,
+    countries: () => countries,
   },
 };
 
