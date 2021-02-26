@@ -1,15 +1,13 @@
 const { ApolloServer, gql } = require('apollo-server');
 
-const books = require('./book.mock');
-const countries = require('./countries.mock');
 const typeDefs = require('./schema');
+const api = require('./api');
 
 // Resolvers define the technique for fetching the types defined in the
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
-    books: () => books,
-    countries: () => countries,
+    countries: () => api.requestAllCountries(),
   },
 };
 
